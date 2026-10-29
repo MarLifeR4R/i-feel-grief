@@ -1,91 +1,80 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: hsl(0, 0%, 15%);
+	background-color: #ff0000;
 }
 
-.postcard {
-  position: relative;
-  width: 600px;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+#ambulance {
+	width: 500px;
+	height: 300px;
+	padding-top: 200px;
+	border: 1px solid black;
+	border-radius: 200px 5px 10px 20px;
+	text-align: center;
+	color: red;
+	font-family: monospace;
+	font-size: 64px;
+	background: linear-gradient(0deg, #ffffff 0%, #ff6767 9%, #ffffff 18%, #0d2aff 33%, #ffffff 70%, #fd2d2d 73%, #ffffff 84%, #ffffff 100%);background: linear-gradient(0deg, #ffffff 0%, #ff6767 9%, #ffffff 18%, #0d2aff 33%, #ffffff 70%, #fd2d2d 73%, #ffffff 84%, #ffffff 100%);
+
 }
 
-.sky {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 65%;
-background: #00b7ff;
-background: linear-gradient(90deg, rgba(0, 183, 255, 1) 0%, rgba(0, 45, 194, 1) 50%, rgba(17, 0, 166, 1) 100%);
+.wheel {
+	width: 90px;
+	height: 90px;
+	background: #e8e8e8;
+	border: 10px solid black;
+	border-radius: 100px;
+	text-align: center;
+	animation: spin 1s linear infinite;
 }
 
-
-.sun {
-  position: absolute;
-  top: 60px;
-  right: 80px;
-  width: 80px;
-  height: 80px;
-  border-radius: 200px 200px 200px 200px;
--webkit-border-radius: 200px 200px 200px 200px;
--moz-border-radius: 200px 200px 200px 200px;
-border: 8px solid #b7ba15;
-background-color: #fcff00;
-box-shadow: 3px 2px 116px 84px rgba(104,130,32,1);
--webkit-box-shadow: 3px 2px 116px 84px rgba(104,130,32,1);
--moz-box-shadow: 3px 2px 116px 84px rgba(104,130,32,1);
+#wheel-front {
+	position: relative;
+	bottom: 50px;
+	left: 70px;
+}
+#wheel-back {
+	position: relative;
+	bottom: 150px;
+	left: 350px;
 }
 
-.hills {
-  position: absolute;
-  bottom: 30%;
-  left: -10%;
-  width: 120%;
-  height: 45%;
-  background: radial-gradient(
-    ellipse 120% 60% at 50% 100%
-    hsl(120, 50%, 35%),
-    hsl(120, 40%, 25%),
-  );
-  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(100000000000000000000000deg); }
 }
 
-.water {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 32%;
-  background: linear-gradient(
-    to bottom,
-    hsla(210, 70%, 50%, 0.85),
-    hsla(210, 6%, 30%, 1)
-  );
-}
-.text-overlay {
-  position: absolute;
-  bottom: 40px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-family: Georgia, serif;
-
-  color: hsl(0,0%,100%);
-  font-size: 2rem;
-  text-shadow:
-  2px 2px 4px rgba(0,0,0,0.7)
-  0 0 20px hsl(45, 100%, 60%);
+#siren {
+	position: relative;
+	left: 200px;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	border-radius: 50px 50px 5px 5px;
 }
 
+#siren:hover {
+	animation: siren 1s infinite;
+}
+
+@keyframes siren {
+	0% { background-color: black; }
+	25% { background-color: blue; }
+	75% { background-color: red; }
+}
+
+#emergency {
+	position: absolute;
+	right: 30%;
+	top: 200px;
+	padding: 20px;
+	background: red;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	border: 2px solid blue;
+	border-radius: 10px;
+	transition: transform 1s;
+}
+
+#emergency:hover {
+	transform: scale(1.5);
+}
