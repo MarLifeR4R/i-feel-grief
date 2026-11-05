@@ -46,12 +46,17 @@ nav a {
 	text-align: center;
 }
 
+
+.phone-card:hover{
+	transform: translateY(-8px);
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
 .phone-card img {
 	width: 100%;
 	border-radius: 12px;
 	margin-bottom: 12px;
 }
-
 .phone-card .score {
 	display: inline-block;
 	margin-top: 12px;
